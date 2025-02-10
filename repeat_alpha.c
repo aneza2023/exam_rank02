@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//not working
 int repeat_alpha(char *str)
 {
     int i;
