@@ -6,14 +6,7 @@
 // does not make sense, m would still be m, unlike the example
 int alpha_minor(char *str)
 {
-    int i;
-    char mod;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-
-    }
 }
 
 
