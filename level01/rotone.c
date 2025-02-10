@@ -21,7 +21,7 @@ int rotone(char *str)
     return (0);
 }
 
-int main(void)
+int main(int argc, char *argv[i])
 {
     if (argc < 2 || argc > 2)
         write (1, "\n", 2);

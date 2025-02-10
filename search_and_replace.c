@@ -4,7 +4,22 @@
 
 int search_and_replace(char *str, char *search, char *replace)
 {
-    while
+    int i;
+    int k;
+
+    i = 0;
+    k = 0;
+    while( str[i] != '\0')
+    {
+        if (search[k] != '\0')
+        {
+            if (str[i] == search[k])
+            {
+                i++;
+                k++;
+            }
+        }
+    }
 }
 
 int main(int argc, char *argv[])
