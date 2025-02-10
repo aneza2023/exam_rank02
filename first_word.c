@@ -17,7 +17,7 @@ int ft_strlen(char *argv)
     return(i);
 }
 
-int main(int argc, char *argv[])
+int first_word(int argc, char *argv[])
 {
     if (argc < 2){
         write(1, "\n", 2);
