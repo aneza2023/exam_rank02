@@ -7,11 +7,9 @@ void	ft_swap(int *a, int *b)
 {
     int *temp;
 
-  //  printf("before change a, b: %p, %p", a, b);
     temp = a;
     a = b;
     b = temp;
-   // printf("a, b: %p, %p", a, b);
 }
 
 /* int main(void)

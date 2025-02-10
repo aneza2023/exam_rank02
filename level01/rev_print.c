@@ -13,7 +13,6 @@ int ft_strlen(char *argv)
             break;
         i++;
     }
-//    printf("i je: %d", i);
     return(i);
 }
 
@@ -21,10 +20,6 @@ int rev_print(char *str)
 {
     int i;
 
-    if (str == NULL){
-        write (1, "\n", 2);
-        return (0);
-    }
     i = ft_strlen(str);
     while (i >= 0)
     {
@@ -35,11 +30,11 @@ int rev_print(char *str)
     return (0);
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    char *str;
-
-    str = "hellou";
-    rev_print(str);
+    if (argc < 2 || argc > 2)
+        write (1, "\n", 2);
+    else
+        rev_print(argv[1]);
     return(0);
 }

@@ -9,11 +9,6 @@ int rot_13(char *str)
     char    mod;
 
     i = 0;
-    if (str == NULL)
-    {
-        write (1, "\n", 2);
-        return (0);
-    }
     while (str[i] != '\0')
     {
         mod = str[i] - 13;
@@ -24,11 +19,11 @@ int rot_13(char *str)
     return (0);
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    char *str;
-
-    str = "abc";
-    rot_13(str);
+    if (argc < 2 || argc > 2)
+        write (1, "\n", 2);
+    else
+        rot_13(argv[1]);
     return(0);
 }

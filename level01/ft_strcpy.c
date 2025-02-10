@@ -13,7 +13,6 @@ int ft_strlen(char *argv)
             break;
         i++;
     }
-//    printf("i je: %d", i);
     return(i);
 }
 
@@ -33,7 +32,7 @@ char    *ft_strcpy(char *s1, char *s2)
     return (s2);
 }
 
-int main(void)
+/* int main(void)
 {
     char *s1;
     char *s2;
@@ -42,4 +41,4 @@ int main(void)
     ft_strcpy(s1, s2);
     printf("string: %s", ft_strcpy(s1, s2));
     return (0);
-}
+} */

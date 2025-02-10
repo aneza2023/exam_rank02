@@ -8,11 +8,6 @@ int rotone(char *str)
     char    mod;
 
     i = 0;
-    if (str == NULL)
-    {
-        write (1, "\n", 2);
-        return (0);
-    }
     while (str[i] != '\0')
     {
         if (str[i] == 'z')
@@ -28,9 +23,9 @@ int rotone(char *str)
 
 int main(void)
 {
-    char *str;
-
-    str = "zakopano";
-    rotone(str);
+    if (argc < 2 || argc > 2)
+        write (1, "\n", 2);
+    else
+        rotone(argv[1]);
     return(0);
 }

@@ -12,6 +12,5 @@ int ft_strlen(char *argv)
             break;
         i++;
     }
-//    printf("i je: %d", i);
     return(i);
 }
