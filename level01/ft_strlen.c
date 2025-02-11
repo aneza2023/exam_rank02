@@ -8,8 +8,6 @@ int ft_strlen(char *argv)
     i = 0;
     while(argv[i] != '\0')
     {
-        if(argv[i] == 32)
-            break;
         i++;
     }
     return(i);
