@@ -10,9 +10,12 @@ int rotone(char *str)
     i = 0;
     while (str[i] != '\0')
     {
+        mod = str[i];
         if (str[i] == 'z')
             mod = 'a';
-        else
+        else if (str[i] == 'Z')
+            mod = 'A';
+        else if ((str[i] >= 65 && str[i] < 90) || (str[i] >= 97 && str[i] < 122))
             mod = str[i] + 1;
         write (1, &mod, 1);
         i++;
@@ -21,7 +24,7 @@ int rotone(char *str)
     return (0);
 }
 
-int main(int argc, char *argv[i])
+int main(int argc, char *argv[])
 {
     if (argc < 2 || argc > 2)
         write (1, "\n", 2);
