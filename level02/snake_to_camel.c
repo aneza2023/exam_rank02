@@ -12,35 +12,36 @@ int ft_strlen(char *argv)
     return(i);
 }
 
-int camle_to_snake(char *str)
+int snake_to_camel(char *str)
 {
     int i;
     int j;
     int k;
     char *final;
 
-    i = ft_strlen(str);
+/*     i = ft_strlen(str);
     j = 0;
     k = 0;
-/*     while (str[j] != '\0')
+    while (str[j] != '\0')
     {
-        if (str[j] > 65 && str[j] < 90)
+        if (str[j] == '_')
             k++;
         j++;
     }
-    final = (char*)malloc(sizeof(char) * (i + k)); */
-    j = 0;
-    while (str[j] != '\0')
+    final = (char *)malloc(sizeof(char) * (i - k)); */
+    i = 0;
+    while (str[i] != '\0')
     {
-        if (str[j] > 64 && str[j] < 91){
-            write (1, "_", 1);
-            str[j] = str[j] + 32;
+        if (str[i] == '_')
+        {
+            str[i + 1] = str[i + 1] - 32;
+            i++;
         }
-        write (1, &str[j], 1);
-        j++;
+        write (1, &str[i] , 1);
+        i++;
     }
-    write (1, "\n", 2);
-    return (0);    
+    write(1, "\n", 2);
+    return (0);
 }
 
 int main(int argc, char *argv[])
@@ -50,6 +51,6 @@ int main(int argc, char *argv[])
         return (0);
     }
     else
-        camle_to_snake(argv[1]);
+        snake_to_camel(argv[1]);
     return (1);
 }
