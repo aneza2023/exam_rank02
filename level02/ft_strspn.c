@@ -24,25 +24,29 @@ size_t	ft_strspn(const char *s, const char *accept)
     while (s[i] != '\0')
     {
         j = ft_strlen(accept);
+     //   printf("acclen %d", j); 
         while (j >= 0)
         {
-            if (s[i] == accept[j])
+            if (s[i] == accept[j]){
+                j = ft_strlen(accept);
                 i++;
-            else if (s[i] != accept[j] && j == 0)
+            }
+            else if ((s[i] != accept[j]) && j == 0)
                 return (i);
+            j--;
         }
     }
     return (i);
 }
 
-int main(void)
+/* int main(void)
 {
     char *str;
     char *forbidden;
 
     str = "hello word";
-    forbidden = "hello";
+    forbidden = "ohle";
     printf("%ld\n", ft_strspn(str, forbidden));
     printf("%ld\n", strspn(str, forbidden));
     return (0);
-}
+} */
