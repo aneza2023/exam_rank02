@@ -12,9 +12,10 @@ int inter(char *str, char *second)
     while (str[i] != '\0')
     {
         j = 0;
+        l = 0;
         while (second[j] != '\0')
         {
-            if (str[i] == second[j])
+            if ((str[i] == second[j])
             {
                 write(1, &str[i], 1);
             }
