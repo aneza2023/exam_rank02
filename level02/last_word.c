@@ -23,7 +23,7 @@ int last_word(char *str)
     k = 0;
     while (i > 0)
     {
-        if (str[i] == 32)
+        if ((str[i] == 32 || str[i] == 9) && ((str[i + 1] != 32 && str[i + 1] != 9) && str[i + 1] != '\0'))
             break;
         k++;
         i--;
