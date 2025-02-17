@@ -2,22 +2,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int repetition(char lett, char *str, int k)
+{
+    int i;
+
+    i = 0;
+    while (str[i] != '\0' && i < k)
+    {
+        if (lett == str[i])
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
 int inter(char *str, char *second)
 {
     int i;
     int j;
-    int l;
 
     i = 0;
     while (str[i] != '\0')
     {
         j = 0;
-        l = 0;
         while (second[j] != '\0')
         {
-            if ((str[i] == second[j])
+            if ((str[i] == second[j]) && (repetition(second[j], second,j) == 0) && repetition(str[i], str, i) == 0)
             {
-                write(1, &str[i], 1);
+                write (1, &str[i], 1);
             }
             j++;
         }
