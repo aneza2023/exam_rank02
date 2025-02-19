@@ -29,6 +29,23 @@ int	ft_atoi(const char *str)
     return (result);
 }
 
+int printing(char k)
+{
+    write (1, &k, 1);
+    return (0);
+}
+
+int printchar(int k)
+{
+    if (k >= 0 && k <10)
+        printing(k + '0');
+    else{
+        printchar(k / 10);
+        printchar(k % 10);
+    }
+    return (0);
+}
+
 int add_prime_sum(char *str)
 {
     int i;
@@ -36,6 +53,7 @@ int add_prime_sum(char *str)
     int z;
     int a;
 
+    a = 0;
     i = ft_atoi(str);
     if (i < 0){
         write (1, "\n", 1);
@@ -52,11 +70,11 @@ int add_prime_sum(char *str)
             z++;
         }
         if (z >= k)
-            a = a * k;
+            a = a + k;
         k++;
     }
-    //how since a char - itoa + strlen seems too long
-    write(1, &a, 5);
+    a = a - 1;
+    printchar(a);
     return (0);
 }
 
