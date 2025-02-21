@@ -2,28 +2,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-// issue> if range starts with 0
-
 int     *ft_range(int start, int end)
 {
     int *range;
     int k;
     int i;
 
-    k = (end) - (start) + 1;
-    printf("%d", k);
-    range = malloc(sizeof(int) * (k + 1));
+    if (start < end)
+        k = end - start + 1;
+    else if (start >= end)
+        k = ((end) - start - 1) * (-1);
+ //   printf("%d", k);
+    range = malloc(sizeof(int) * k);
     if (range == NULL)
         return (NULL);
-    k = 0;
-    while (start <= end)
+    i = 0;
+    if (start < end)
     {
-        range[k] = start;
-        k++;
-        start++;
+        while (start <= end)
+        {
+            range[i] = start;
+            i++;
+            start++;
+        }
     }
-    range[k] = '\0';
+    else if (start > end)
+    {
+        while (start >= end)
+        {
+            range[i] = start;
+            start--;
+            i++;
+        }
+    }
     return (range);
 }
 
@@ -33,8 +44,8 @@ int     *ft_range(int start, int end)
     int k;
 
     k = 0;
-    result =  ft_range(0, 3);
-    while (result[k] != '\0')
+    result =  ft_range(-3, 11);
+    while (k <= 15)
     {
         printf("%d\n", result[k]);
         k++;
