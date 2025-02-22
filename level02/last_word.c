@@ -28,7 +28,9 @@ int last_word(char *str)
         k++;
         i--;
     }
-    i = ft_strlen(str) - k + 1;
+    i = ft_strlen(str) - k;
+    if (str[i] == 32 || str[i] == 9)
+        i++;
     while (str[i] != '\0')
     {
         write(1, &str[i], 1);
