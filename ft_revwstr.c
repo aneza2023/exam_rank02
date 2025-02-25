@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_strlen(char *argv)
+int ft_strlenmod(char *argv)
 {
     int i;
 
     i = 0;
     while(argv[i] != '\0')
     {
+        if (argv[i] == 32 || argv[i] == 9)
+            i++;
         i++;
     }
     return(i);
@@ -17,25 +19,17 @@ int ft_strlen(char *argv)
 int revwstr(char *str)
 {
     int i;
-    int k;
+    int j;
+    char **arr;
 
-    k = ft_strlen(str);
-    i = ft_strlen(str);
-    while (k > 0)
-    {
-        while (i > 0)
-        {
-            if (str[i] == 32 || str[i] == 9)
-                break;
-            i--;
-        }
-        while (str[i] != '\0')
-        {
-            write (1, &str[i], 1);
-            i++;
-        
-    }
-    
+    i = 0;
+    j = ft_strlenmod(str) + 1;
+    printf("%d", j);
+    arr = malloc(sizeof(char) * j);
+    if (arr == NULL)
+        return (NULL);
+    while (str)
+    return (0);
 }
 
 int main(int argc, char *argv[])
