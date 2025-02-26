@@ -19,12 +19,12 @@ int numberofstring(char *str)
 }
 
 
-int ft_strlen(char *argv)
+int ft_strlenmod(char *argv)
 {
     int i;
 
     i = 0;
-    while(argv[i] != '\0')
+    while(argv[i] != '\0' && (argv[i] != 32 && argv[i] != 9))
     {
         i++;
     }
@@ -36,7 +36,7 @@ char *stringmake(char *str)
     int i;
     char *string;
 
-    i = ft_strlen(str);
+    i = ft_strlenmod(str);
     string = malloc(sizeof(char) * i + 1);
     if (string == NULL)
         return (NULL);
@@ -58,7 +58,7 @@ char    **ft_split(char *str)
     int i;
 
     nbstr = numberofstring(str);
-    result = malloc(sizeof(char) * nbstr);
+    result = malloc(sizeof(char *) * nbstr + 1);
     if (result == NULL)
         return NULL;
  //   findend(str);
@@ -68,17 +68,18 @@ char    **ft_split(char *str)
         result[i] = stringmake(&str[len]);
         while (str[len] != '\0' && (str[len] != 32 && str[len] != 9))
             len++;
+        len++;
         i++;
     }
     result[i] = '\0';
     return (result);
 }
 
-int main(void)
+/* int main(void)
 {
-	char str[60] = "ANEZKA ISVERY CUTE3<3";
+	char str[60] = "seerl ljfalrg lajlrg";
 	int i = 0;
-    printf("%d", i);
+//    printf("%d", i);
 	char **res = ft_split(str);
 	while (res[i] != NULL) {
 		printf("%s\n", res[i]);
@@ -87,4 +88,4 @@ int main(void)
 	}
 	free(res);
 	return (0);
-} 
+}  */
